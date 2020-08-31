@@ -25,7 +25,7 @@ ENV LC_ALL en_US.UTF-8
 
 RUN wget https://getcomposer.org/composer.phar && mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
 
-RUN composer global require hirak/prestissimo
+RUN composer global require hirak/prestissimo --ignore-platform-reqs
 
 VOLUME /app
 WORKDIR /app
