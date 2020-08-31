@@ -23,7 +23,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN wget https://getcomposer.org/composer.phar && mv composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
+RUN wget https://getcomposer.org/composer-stable.phar && mv composer-stable.phar /usr/bin/composer && chmod +x /usr/bin/composer
 
 RUN composer global require hirak/prestissimo --ignore-platform-reqs
 
