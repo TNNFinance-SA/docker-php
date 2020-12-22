@@ -1,6 +1,6 @@
 FROM tnnfinance/php:7.2
 
-RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN pecl install xdebug-2.9.8 && docker-php-ext-enable xdebug
 RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
     && curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/linux/amd64/$version \
     && mkdir -p /tmp/blackfire \
