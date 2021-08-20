@@ -1,6 +1,6 @@
 FROM php:7.2-fpm
 
-RUN apt-get update && buildDeps="libpq-dev libzip-dev" && apt-get install -y $buildDeps git nano wget vim libpcre3-dev libmcrypt-dev libmemcached-dev libmemcached11 libmemcachedutil2 libpng-dev rsync cron zlib1g-dev libicu-dev g++ libjpeg-dev libpng-dev ca-certificates libxml2-dev zip --no-install-recommends
+RUN apt-get --allow-releaseinfo-change update && buildDeps="libpq-dev libzip-dev" && apt-get install -y $buildDeps git nano wget vim libpcre3-dev libmcrypt-dev libmemcached-dev libmemcached11 libmemcachedutil2 libpng-dev rsync cron zlib1g-dev libicu-dev g++ libjpeg-dev libpng-dev ca-certificates libxml2-dev zip --no-install-recommends
 RUN docker-php-ext-install pdo pdo_pgsql pgsql zip bcmath mbstring calendar
 RUN docker-php-ext-install gettext
 RUN pecl install memcached && docker-php-ext-enable memcached
